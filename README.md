@@ -1,30 +1,73 @@
-# Homepage dashboard design
+# Homepage Dashboard Design
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A beautiful, customizable homepage dashboard for organizing and managing bookmarks — a personal start page with grid, list, and kanban views, built with Next.js.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gileb64375-5584s-projects/v0-homepage-dashboard-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/JOd7ht7lcHd)
+## Features
 
-## Overview
+- **Bookmark management** — add, edit, and delete bookmarks with titles, URLs, descriptions, and tags
+- **Multiple views** — grid, list, and kanban layouts for browsing your links
+- **Search** — instant search across all bookmarks
+- **Favorites** — star frequently used links for quick access
+- **Tags & filtering** — organize bookmarks with tags and filter by them
+- **Stats overview** — activity and analytics cards at a glance
+- Dark/light theme toggle
+- Responsive design — works on desktop and mobile
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 15 (App Router, static export)
+- [React](https://react.dev/) 19
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) + `tailwindcss-animate`
+- [shadcn/ui](https://ui.shadcn.com/) components (Radix UI primitives)
+- [Lucide](https://lucide.dev/) icons
+
+## Getting Started
+
+```bash
+npm install
+npm run dev      # start dev server at http://localhost:3000
+npm run build    # production build
+npm start        # run production build
+```
+
+Node.js 18+ recommended. If you hit peer-dependency conflicts during install, use:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+## Project Structure
+
+```
+app/                  # Next.js App Router pages and layout
+  page.tsx            # bookmark dashboard (main view)
+components/           # reusable UI
+  theme-provider.tsx
+  ui/                 # shadcn/ui primitives
+hooks/                # custom React hooks
+lib/                  # utilities
+public/               # static assets
+styles/               # global styles
+```
+
+## Environment Variables
+
+None required — the app runs fully client-side with no backend or API keys.
 
 ## Deployment
 
-Your project is live at:
+The app is statically exported (`output: 'export'` in `next.config.mjs`), so it can be hosted anywhere that serves static files:
 
-**[https://vercel.com/gileb64375-5584s-projects/v0-homepage-dashboard-design](https://vercel.com/gileb64375-5584s-projects/v0-homepage-dashboard-design)**
+```bash
+npm run build   # outputs to ./out
+```
 
-## Build your app
+Notes:
 
-Continue building your app on:
+- The repo is synced from a v0.app project and was originally deployed on Vercel.
+- When deployed under a subpath (e.g. GitHub Pages project pages), `next.config.mjs` sets `basePath: '/homepage-dashboard-design'`. Remove `basePath` (and keep `output: 'export'`) when deploying to a root domain or Vercel, otherwise assets will resolve incorrectly.
 
-**[https://v0.app/chat/projects/JOd7ht7lcHd](https://v0.app/chat/projects/JOd7ht7lcHd)**
+## Built by
 
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Built by Girish Lade — https://ladestack.in
